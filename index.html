@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title translate="yes">Cookie Clicker</title>
+  <link href="/style.css" rel="stylesheet" type="text/css" />
+  <link type="image/png" rel="shortcut icon" href="/Images/Cookie.png">
+  <link
+    rel="stylesheet"
+    data-purpose="Layout StyleSheet"
+    title="Web Awesome"
+    href="/css/app-wa-d53d10572a0e0d37cb8d614a3f177a0c.css?vsn=d"
+  >
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.2/css/all.css"
+    >
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.2/css/sharp-thin.css"
+    >
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.2/css/sharp-solid.css"
+    >
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.2/css/sharp-regular.css"
+    >
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.2/css/sharp-light.css"
+    >
+</head>
+
+<body>
+  <div class="container">
+    <input type="checkbox" id="menuToggle">
+    <header>
+      <label for="menuToggle" class="toggleBtn">
+        <div class="rect rectOne"></div>
+        <div class="rect rectTwo"></div>
+        <div class="rect rectThree"></div>
+      </label>
+        
+      <ul>
+        <li click id="Add1Cookie">
+          <i class="fa-solid fa-arrow-pointer" style="color: #ffffff;"></i>
+          <div class="optionInformation">
+            <h3>Cursor</h3>
+            <h4>+1 Cookie per click</h4>
+          </div>
+          <p vertical>1 Cookie</p>
+        </li>
+        <li autoclick id="AutoAdd1Cookie">
+          <i class="fa-solid fa-clipboard-user"></i>
+          <div class="optionInformation">
+            <h3>Assitant</h3>
+            <h4>+1 Cookie per second</h4>
+          </div>
+          <p vertical>1 Cookie</p>
+        </li>
+        <li click id="Add5Cookie">
+          <i class="fa-regular fa-computer-mouse-scrollwheel" style="color: #ffffff;"></i>
+          <div class="optionInformation">
+            <h3>Mr Clicker</h3>
+            <h4>+5 Cookies per click</h4>
+          </div>
+          <p vertical>5 Cookies</p>
+        </li>
+        <li autoclick id="AutoAdd5Cookie">
+          <i class="fa-solid fa-person"></i>
+          <div class="optionInformation">
+            <h3>Mr Assitant</h3>
+            <h4>+5 Cookies per second</h4>
+          </div>
+          <p vertical>5 Cookies</p>
+        </li>
+        <li click id="Add10Cookie">
+          <i class="fa-regular fa-stethoscope"></i>
+          <div class="optionInformation">
+            <h3>Dr Clicker</h3>
+            <h4>+10 Cookies per click</h4>
+          </div>
+          <p vertical>10 Cookies</p>
+        </li>
+        <li autoclick id="AutoAdd10Cookie">
+          <i class="fa-sharp fa-solid fa-person"></i>
+          <div class="optionInformation">
+            <h3>Dr Assitant</h3>
+            <h4>+10 Cookies per second</h4>
+          </div>
+          <p vertical>10 Cookies</p>
+        </li>
+        <li click id="Add50Cookie">
+          <i class="fa-light fa-sunglasses"></i>
+          <div class="optionInformation">
+            <h3>Cool Clicker</h3>
+            <h4>+50 Cookies per click</h4>
+          </div>
+          <p vertical>50 Cookies</p>
+        </li>
+        <li autoclick id="AutoAdd50Cookie">
+          <i class="fa-duotone fa-face-sunglasses"></i>
+          <div class="optionInformation">
+            <h3>Cool Assitant</h3>
+            <h4>+50 Cookies per second</h4>
+          </div>
+          <p vertical>50 Cookies</p>
+        </li>
+      </ul>
+    </header>
+    <main>
+      <section class="headerSection">
+        <h2 id="cookiesPerSecond">0 Cookies Per Second</h2>
+        <h2 id="cookiesPerClick">1 Cookie Per Click</h2>
+        <h1 id="totalCookiesPreview">0 Cookies</h1>
+      </section>
+      <section class="mainSection">
+        <button id="myCookie"></button>
+      </section>
+    </main>
+    <footer>
+      <button id="RebirthBtn" pourcentageValue="10">Rebirth</button>
+    </footer>
+  </div>
+  
+  <script src="/script.js"></script>
+</body>
+
+</html>
