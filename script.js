@@ -133,8 +133,8 @@ AutoAdd10Cookie.onclick = function(){
   if(NumOfCookies >= AutoAdd10CookiePrice){
     NumOfCookies-=AutoAdd10CookiePrice;
     setTimeout(() => {
-      AutoAdd1CookiePrice+=69;
-      document.querySelector("#AutoAdd50Cookie p").textContent = AutoAdd50CookiePrice + " " + "Cookies";
+      AutoAdd10CookiePrice+=69;
+      document.querySelector("#AutoAdd10Cookie p").textContent = AutoAdd10CookiePrice + " " + "Cookies";
     }, 100);
     CookiePerSecond+=10;
     NumOfCookies == 1 ? CookiePreview.textContent = NumOfCookies + " " + "Cookie" : CookiePreview.textContent = NumOfCookies + " " + "Cookies";
