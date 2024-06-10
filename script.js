@@ -146,7 +146,7 @@ AutoAdd50Cookie.onclick = function(){
   if(NumOfCookies >= AutoAdd50CookiePrice){
     NumOfCookies-=AutoAdd50CookiePrice;
     setTimeout(() => {
-      AutoAdd1CookiePrice+=769;
+      AutoAdd50CookiePrice+=769;
       document.querySelector("#AutoAdd50Cookie p").textContent = AutoAdd50CookiePrice + " " + "Cookies";
     }, 100);
     CookiePerSecond+=50;
