@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Fjalla+One&family=Jockey+One&family=Just+Another+Hand&family=Karantina:wght@300;400;700&family=Koulen&family=League+Gothic&family=Lilita+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Six+Caps&family=Staatliches&family=Zilla+Slab+Highlight:wght@400;700&display=swap');
 @font-face {
-  src: url("/CookieClicker/Fonts/Rockstar-ExtraBold.otf");
+  src: url("CookieClicker/Fonts/Rockstar-ExtraBold.otf");
   font-family: RockstarBold;
 }
 :root{
@@ -22,6 +22,7 @@
   --primary-font-clr: #262626;
 
   --primary-bg-clr: #8dc48d;
+  --secondary-bg-clr: #415841;
 }
 *{
   box-sizing: border-box;
@@ -51,7 +52,7 @@ header {
   position: absolute;
   right: 0;
   z-index: 10;
-  height: 100%; 
+  height: 100dvh;
   width: clamp(300px, 20vw, 320px);
   border-radius: 5px 0 0 5px;
   transition: right 0.3s ease;
@@ -63,7 +64,7 @@ header {
     flex-direction: column;
     gap: 1rem;
     height: 100%;
-    overflow-y: auto;
+    overflow-y: scroll;
     
     li {
       list-style: none;
@@ -76,20 +77,44 @@ header {
       position: relative;
       box-sizing: content-box;
       padding-block: 8px;
+      height: 30dvh !important;
       /* justify-content: center; */
       align-items: center;
       gap: 1rem;
 
+      .optionInformation {
+        padding-block-end: 15px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+      }
       [vertical] {
         writing-mode: vertical-lr;
         position: absolute;
         right: 10px;
       }
+      [horizontal] {
+        writing-mode: horizontal-tb;
+        right: 2px;
+        bottom: 2.5px;
+        background-color: var(--secondary-bg-clr);
+        position: absolute;
+        width: 60%;
+        text-align: center;
+        height: fit-content;
+        border-radius: 5px;
+
+        i{
+          font-size: 15px;
+          margin-inline-end: 2.5px;
+        }
+      }
       i {
-        font-size: 50px;
+        font-size: 70px;
       }
       h3 {
-        font-size: 2em;
+        font-size:1.3em;
       }
       * {
         color: inherit;
@@ -136,7 +161,7 @@ main {
     }
     #myCookie {
       height: clamp(400px, 400px, 500px);
-      background-image: url("/CookieClicker/Images/Cookie.png");
+      background-image: url("CookieClicker/Images/Cookie.png");
       background-size: cover;
       aspect-ratio: 3753/3713;
       border-radius: 50%;
