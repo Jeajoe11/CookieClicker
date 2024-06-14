@@ -157,10 +157,6 @@ AutoAdd50Cookie.onclick = function(){
     cookiesPerSecondPreview.textContent = CookiePerSecond == 1 ? CookiePerSecond + " " + "Cookie per second" : CookiePerSecond + " " + "Cookies per second"
   }
 }
-setInterval(() => {
-  NumOfCookies+=CookiePerSecond;
-  CookiePreview.textContent = NumOfCookies == 1 ? CookiePreview.textContent = NumOfCookies + " " + "Cookie" : CookiePreview.textContent = NumOfCookies + " " + "Cookies";
-}, 1000);
 //Auto +150 Cookies
 AutoAdd150Cookie.onclick = function(){
   if(NumOfCookies >= AutoAdd150CookiePrice){
