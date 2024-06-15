@@ -170,7 +170,7 @@ main {
     :has([scale]) {
       animation: scale-down 0.3s ease;
     }
-    #myCookie {
+    .myCookie {
       height: clamp(500px, 500px, 600px);
       background-image: url("/CookieClicker/Images/Cookie.png");
       background-size: cover;
@@ -278,4 +278,59 @@ input#menuToggle:checked ~ header > label.toggleBtn {
 }
 input#menuToggle:checked ~ header {
   right: calc(-1 * clamp(275px, 20vw, 300px));
+}
+footer {
+  height: 30dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100dvw;
+  margin-block-start: 20px;
+
+  section {
+    position: relative;
+  }
+  h4#CookieMultiplierPreview {
+    font-size: 50px;
+    color: beige;
+    transition: font-size 0.7s ease;
+    text-align: center;
+    width: 75dvw;
+  }
+  #RebirthBtn {
+    width: 75dvw;
+    height: 120px;
+    font-size: 4.2em;
+    border-radius: 10px;
+    border: 0;
+    background-color: var(--secondary-bg-clr);
+    color: beige;
+    position: relative;
+    isolation: isolate;
+    overflow: clip;
+
+    &::after {
+      content: ""; 
+      z-index: -1;
+      height: 100%;
+      width: var(--after-width);
+      left: 0;
+      top: 0;
+      background-color: #f1a843;
+      position: absolute;
+      transition: width 0.7s ease;
+    }
+    &::before {
+      counter-reset: afterWidth var(--after-width);
+      content: attr(after-width);
+      position: absolute;
+      font-size: 20px;
+      bottom: 7.5px;
+      width: 100%;
+      left: 0;
+      user-select: none;
+      text-align: center;
+    }
+  }
 }
