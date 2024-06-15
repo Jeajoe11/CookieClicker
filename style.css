@@ -309,6 +309,7 @@ footer {
     position: relative;
     isolation: isolate;
     overflow: clip;
+    cursor: pointer;
 
     &::after {
       content: ""; 
