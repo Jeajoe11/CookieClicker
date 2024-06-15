@@ -12,25 +12,33 @@ const AutoAdd10Cookie = document.getElementById("AutoAdd10Cookie");
 const AutoAdd50Cookie = document.getElementById("AutoAdd50Cookie");
 const AutoAdd150Cookie = document.getElementById("AutoAdd150Cookie");
 
-
 //EXTRA
 const BigCookie = document.getElementById("myCookie");
+const BigCookieCookie = document.querySelector(".myCookie");
+const RebirthBtnAfter = document.querySelector("#RebirthBtn::after")
+
+//PREVIEWS
 const CookiePreview = document.getElementById("totalCookiesPreview");
 const cookiesPerClickPreview = document.getElementById("cookiesPerClick");
-const cookiesPerSecondPreview = document.getElementById("cookiesPerSecond")
+const cookiesPerSecondPreview = document.getElementById("cookiesPerSecond");
+const RebirthBtn = document.getElementById("RebirthBtn");
+const CookieMultiplierPreview = document.getElementById("CookieMultiplierPreview");
+
 
 //VARIABLES
 let NumOfCookies = 0;
-let CookiePerClick = 1;
-let CookiePerSecond = 0;
-let running = true;
+let CookieMultiplier = 1;
+let CookiePerClick = 1*CookieMultiplier;
+let CookiePerSecond = 0*CookieMultiplier;
+let PourcentageValue = 0;
+let RebirthAmount = 50000;
 
 //ADDITION COOKIES PRICES
-let Add1CookiePrice = 12;
-let Add5CookiePrice = 104;
-let Add10CookiePrice = 269;
-let Add50CookiePrice = 1200;
-let Add150CookiePrice = 2169;
+let Add1CookiePrice = 12*CookieMultiplier;
+let Add5CookiePrice = 104*CookieMultiplier;
+let Add10CookiePrice = 269*CookieMultiplier;
+let Add50CookiePrice = 1200*CookieMultiplier;
+let Add150CookiePrice = 2169*CookieMultiplier;
 
 //AUTO ADDITION COOKIES PRICES
 let AutoAdd1CookiePrice = 44;
@@ -40,13 +48,17 @@ let AutoAdd50CookiePrice = 1699;
 let AutoAdd150CookiePrice = 4999;
 
 BigCookie.onclick = function(){
-  NumOfCookies += CookiePerClick;
+  NumOfCookies += CookiePerClick*CookieMultiplier;
   NumOfCookies == 1 ? CookiePreview.textContent = NumOfCookies + " " + "Cookie" : CookiePreview.textContent = NumOfCookies + " " + "Cookies";
-  BigCookie.setAttribute("style", "transform: scale(0.96);");
+  PourcentageValue = NumOfCookies/RebirthAmount*100;
+  RebirthBtn.setAttribute("style", `--after-width: ${PourcentageValue}%`);
+  RebirthBtn.setAttribute("after-width",`${PourcentageValue.toFixed(0)}%`);
+  BigCookieCookie.setAttribute("style", "transform: scale(0.96);");
   
   setTimeout(() => {
-    BigCookie.setAttribute("style", "transform: scale(1);");
+    BigCookieCookie.setAttribute("style", "transform: scale(1);");
   }, 150);
+  
 }
 //ADDITION COOKIES FUNCTIONS
 
@@ -62,6 +74,9 @@ Add1Cookie.onclick = function(){
     NumOfCookies == 1 ? CookiePreview.textContent = NumOfCookies + " " + "Cookie" : CookiePreview.textContent = NumOfCookies + " " + "Cookies";
   }
   cookiesPerClickPreview.textContent = CookiePerClick == 1 ? cookiesPerClickPreview.textContent = CookiePerClick + " " + "Cookie per click" : cookiesPerClickPreview.textContent = CookiePerClick + " " + "Cookies per click";
+  PourcentageValue = NumOfCookies/RebirthAmount*100;
+  RebirthBtn.setAttribute("style", `--after-width: ${PourcentageValue}%`);
+  RebirthBtn.setAttribute("after-width",`${PourcentageValue.toFixed(0)}%`);
 }
 //+5 Cookies
 Add5Cookie.onclick = function(){
@@ -75,6 +90,9 @@ Add5Cookie.onclick = function(){
     NumOfCookies == 1 ? CookiePreview.textContent = NumOfCookies + " " + "Cookie" : CookiePreview.textContent = NumOfCookies + " " + "Cookies";
   }
   cookiesPerClickPreview.textContent = CookiePerClick == 1 ? cookiesPerClickPreview.textContent = CookiePerClick + " " + "Cookie per click" : cookiesPerClickPreview.textContent = CookiePerClick + " " + "Cookies per click";
+  PourcentageValue = NumOfCookies/RebirthAmount*100;
+  RebirthBtn.setAttribute("style", `--after-width: ${PourcentageValue}%`);
+  RebirthBtn.setAttribute("after-width",`${PourcentageValue.toFixed(0)}%`);
 }
 //+10 Cookies
 Add10Cookie.onclick = function(){
@@ -88,6 +106,9 @@ Add10Cookie.onclick = function(){
     NumOfCookies == 1 ? CookiePreview.textContent = NumOfCookies + " " + "Cookie" : CookiePreview.textContent = NumOfCookies + " " + "Cookies";
   }
   cookiesPerClickPreview.textContent = CookiePerClick == 1 ? cookiesPerClickPreview.textContent = CookiePerClick + " " + "Cookie per click" : cookiesPerClickPreview.textContent = CookiePerClick + " " + "Cookies per click";
+  PourcentageValue = NumOfCookies/RebirthAmount*100;
+  RebirthBtn.setAttribute("style", `--after-width: ${PourcentageValue}%`);
+  RebirthBtn.setAttribute("after-width",`${PourcentageValue.toFixed(0)}%`);
 }
 //+50 Cookies
 Add50Cookie.onclick = function(){
@@ -101,6 +122,9 @@ Add50Cookie.onclick = function(){
     NumOfCookies == 1 ? CookiePreview.textContent = NumOfCookies + " " + "Cookie" : CookiePreview.textContent = NumOfCookies + " " + "Cookies";
   }
   cookiesPerClickPreview.textContent = CookiePerClick == 1 ? cookiesPerClickPreview.textContent = CookiePerClick + " " + "Cookie per click" : cookiesPerClickPreview.textContent = CookiePerClick + " " + "Cookies per click";
+  PourcentageValue = NumOfCookies/RebirthAmount*100;
+  RebirthBtn.setAttribute("style", `--after-width: ${PourcentageValue}%`);
+  RebirthBtn.setAttribute("after-width",`${PourcentageValue.toFixed(0)}%`);
 }
 
 //AUTO ADDITION COOKIES FUNCTION
@@ -115,7 +139,10 @@ AutoAdd1Cookie.onclick = function(){
       document.querySelector("#AutoAdd1Cookie p span").textContent = AutoAdd1CookiePrice;
     }, 100);
     NumOfCookies == 1 ? CookiePreview.textContent = NumOfCookies + " " + "Cookie" : CookiePreview.textContent = NumOfCookies + " " + "Cookies";
-    cookiesPerSecondPreview.textContent = CookiePerSecond == 1 ? CookiePerSecond + " " + "Cookie per second" : CookiePerSecond + " " + "Cookies per second"
+    cookiesPerSecondPreview.textContent = CookiePerSecond == 1 ? CookiePerSecond + " " + "Cookie per second" : CookiePerSecond + " " + "Cookies per second";
+    PourcentageValue = NumOfCookies/RebirthAmount*100;
+    RebirthBtn.setAttribute("style", `--after-width: ${PourcentageValue}%`);
+    RebirthBtn.setAttribute("after-width",`${PourcentageValue.toFixed(0)}%`);
   }
 }
 //Auto +5 Cookies
@@ -128,7 +155,10 @@ AutoAdd5Cookie.onclick = function(){
       document.querySelector("#AutoAdd5Cookie p span").textContent = AutoAdd5CookiePrice;
     }, 100);
     NumOfCookies == 1 ? CookiePreview.textContent = NumOfCookies + " " + "Cookie" : CookiePreview.textContent = NumOfCookies + " " + "Cookies";
-    cookiesPerSecondPreview.textContent = CookiePerSecond == 1 ? CookiePerSecond + " " + "Cookie per second" : CookiePerSecond + " " + "Cookies per second"
+    cookiesPerSecondPreview.textContent = CookiePerSecond == 1 ? CookiePerSecond + " " + "Cookie per second" : CookiePerSecond + " " + "Cookies per second";
+    PourcentageValue = NumOfCookies/RebirthAmount*100;
+    RebirthBtn.setAttribute("style", `--after-width: ${PourcentageValue}%`);
+    RebirthBtn.setAttribute("after-width",`${PourcentageValue.toFixed(0)}%`);
   }
 }
 //Auto +10 Cookies
@@ -141,7 +171,10 @@ AutoAdd10Cookie.onclick = function(){
     }, 100);
     CookiePerSecond+=10;
     NumOfCookies == 1 ? CookiePreview.textContent = NumOfCookies + " " + "Cookie" : CookiePreview.textContent = NumOfCookies + " " + "Cookies";
-    cookiesPerSecondPreview.textContent = CookiePerSecond == 1 ? CookiePerSecond + " " + "Cookie per second" : CookiePerSecond + " " + "Cookies per second"
+    cookiesPerSecondPreview.textContent = CookiePerSecond == 1 ? CookiePerSecond + " " + "Cookie per second" : CookiePerSecond + " " + "Cookies per second";
+    PourcentageValue = NumOfCookies/RebirthAmount*100;
+    RebirthBtn.setAttribute("style", `--after-width: ${PourcentageValue}%`);
+    RebirthBtn.setAttribute("after-width",`${PourcentageValue.toFixed(0)}%`);
   }
 }
 //Auto +50 Cookies
@@ -154,7 +187,10 @@ AutoAdd50Cookie.onclick = function(){
     }, 100);
     CookiePerSecond+=50;
     NumOfCookies == 1 ? CookiePreview.textContent = NumOfCookies + " " + "Cookie" : CookiePreview.textContent = NumOfCookies + " " + "Cookies";
-    cookiesPerSecondPreview.textContent = CookiePerSecond == 1 ? CookiePerSecond + " " + "Cookie per second" : CookiePerSecond + " " + "Cookies per second"
+    cookiesPerSecondPreview.textContent = CookiePerSecond == 1 ? CookiePerSecond + " " + "Cookie per second" : CookiePerSecond + " " + "Cookies per second";
+    PourcentageValue = NumOfCookies/RebirthAmount*100;
+    RebirthBtn.setAttribute("style", `--after-width: ${PourcentageValue}%`);
+    RebirthBtn.setAttribute("after-width",`${PourcentageValue.toFixed(0)}%`);
   }
 }
 //Auto +150 Cookies
@@ -168,9 +204,44 @@ AutoAdd150Cookie.onclick = function(){
     CookiePerSecond+=150;
     NumOfCookies == 1 ? CookiePreview.textContent = NumOfCookies + " " + "Cookie" : CookiePreview.textContent = NumOfCookies + " " + "Cookies";
     cookiesPerSecondPreview.textContent = CookiePerSecond == 1 ? CookiePerSecond + " " + "Cookie per second" : CookiePerSecond + " " + "Cookies per second"
+    PourcentageValue = NumOfCookies/RebirthAmount*100;
+    RebirthBtn.setAttribute("style", `--after-width: ${PourcentageValue}%`);
+    RebirthBtn.setAttribute("after-width",`${PourcentageValue.toFixed(0)}%`);
   }
 }
+RebirthBtn.setAttribute("pourcentageValue", PourcentageValue);
+RebirthBtn.onclick = function(){
+  if(PourcentageValue >= 100) {
+    CookieMultiplier++;
+    CookieMultiplierPreview.textContent = CookieMultiplier + "x" + " " + "Cookies"
+    NumOfCookies = 0;
+    CookiePerClick = 1;
+    CookiePerSecond = 0;
+    PourcentageValue = 0;
+    RebirthAmount*5;
+    cookiesPerClickPreview.textContent = CookiePerClick == 1 ? cookiesPerClickPreview.textContent = CookiePerClick + " " + "Cookie per click" : cookiesPerClickPreview.textContent = CookiePerClick + " " + "Cookies per click";
+    cookiesPerSecondPreview.textContent = CookiePerSecond == 1 ? CookiePerSecond + " " + "Cookie per second" : CookiePerSecond + " " + "Cookies per second";
+    NumOfCookies == 1 ? CookiePreview.textContent = NumOfCookies + " " + "Cookie" : CookiePreview.textContent = NumOfCookies + " " + "Cookies";
+    PourcentageValue = NumOfCookies/RebirthAmount*100;
+    RebirthBtn.setAttribute("style", `--after-width: ${PourcentageValue}%`);
+    RebirthBtn.setAttribute("after-width",`${PourcentageValue.toFixed(0)}%`);
+  }
+  else {
+    RebirthBtn.onclick = function(){
+      CookieMultiplierPreview.setAttribute("style", "font-size: 30px;")
+        CookieMultiplierPreview.textContent = "You have not reached the requested amount of Cookies. Please try again once you have gotten" + " " + (100 - PourcentageValue).toFixed(0) + "%" + " " + "more Cookies.";
+      setTimeout(()=> {
+        CookieMultiplierPreview.textContent = CookieMultiplier + "x" + " " + "Cookies";
+        CookieMultiplierPreview.setAttribute("style", "font-size: 50px;")
+      }, 4000)
+    }
+  };
+}
+PourcentageValue = NumOfCookies/RebirthAmount*100;
+RebirthBtn.setAttribute("style", `--after-width: ${PourcentageValue}%`);
+RebirthBtn.setAttribute("after-width",`${PourcentageValue.toFixed(0)}%`);
+
 setInterval(() => {
-  NumOfCookies+=CookiePerSecond;
+  NumOfCookies+=CookiePerSecond*CookieMultiplier;
   CookiePreview.textContent = NumOfCookies == 1 ? CookiePreview.textContent = NumOfCookies + " " + "Cookie" : CookiePreview.textContent = NumOfCookies + " " + "Cookies";
 }, 1000)
