@@ -5,8 +5,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title translate="yes">Cookie Clicker</title>
-  <link href="/CookieClicker/style.css" rel="stylesheet" type="text/css" />
-  <link type="image/png" rel="shortcut icon" href="/CookieClicker/Images/Cookie.png">
+  <link href="/style.css" rel="stylesheet" type="text/css" />
+  <link type="image/png" rel="shortcut icon" href="/Images/Cookie.png">
   <link
     rel="stylesheet"
     data-purpose="Layout StyleSheet"
@@ -155,22 +155,28 @@
         </li>
       </ul>
     </header>
-    <main>
+    <main id="myCookie">
       <section class="headerSection">
         <h2 id="cookiesPerSecond">0 Cookies Per Second</h2>
         <h2 id="cookiesPerClick">1 Cookie Per Click</h2>
         <h1 id="totalCookiesPreview">0 Cookies</h1>
       </section>
       <section class="mainSection">
-        <button id="myCookie"></button>
+        <button class="myCookie"></button>
       </section>
     </main>
-    <!-- <footer>
-      <button id="RebirthBtn" pourcentageValue="10">Rebirth</button>
-    </footer> -->
+    <footer>
+      <section>
+        <h2 id="RebirthAmount"></h2>
+        <button style="--after-width: 0%; --before-content: 0%;" id="RebirthBtn">Rebirth</button>
+      </section>
+      <section>
+        <h4 id="CookieMultiplierPreview">1x Cookies</h4>
+      </section>
+    </footer>
   </div>
   
-  <script src="/CookieClicker/script.js"></script>
+  <script src="/script.js"></script>
 </body>
 
 </html>
